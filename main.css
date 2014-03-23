@@ -1,0 +1,194 @@
+html {
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@media (min-width: 420px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+a {
+  color: #156997;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+/**
+ * Utilities
+ */
+
+.u-cf:before,
+.u-cf:after {
+  content: "";
+  display: table;
+}
+
+.u-cf:after {
+  clear: both;
+}
+
+.u-textCenter {
+  text-align: center !important;
+}
+
+.u-size1of3 {
+  width: 33.33333%;
+}
+
+/**
+ * CallToAction
+ */
+
+.CallToAction-text {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.CallToAction-cli {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  font-family: monospace, monospace;
+}
+
+.CallToAction-cmd + .CallToAction-cmd {
+  margin: 1rem 0 0;
+}
+
+.CallToAction-cmd a {
+  color: #fff;
+}
+
+.CallToAction-footer {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2rem;
+}
+
+.CallToAction-supportingLink {
+  color: inherit;
+  font-size: 0.75rem;
+}
+
+/**
+ * Card
+ */
+
+.Card {
+  background: #3384b1;
+  color: #fff;
+  padding: 40px 0 2rem;
+}
+
+.Card .Header {
+  margin-bottom: 4rem;
+}
+
+.Card .CallToAction {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 38em;
+}
+
+/**
+ * Code
+ */
+
+.Code {
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 40px;
+}
+
+/**
+ * Container
+ */
+
+.Container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+/**
+ * Footer
+ */
+
+.Footer {
+  padding-top: 2rem;
+}
+
+/**
+ * Header
+ */
+
+.Header {
+  color: #fff;
+}
+
+.Header-project {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.Header a {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.Header a:hover,
+.Header a:focus,
+.Header a:active {
+  background: #fff;
+  color: #3384b1;
+}
+
+/**
+ * Section
+ */
+
+.Section {
+  margin-top: 3rem;
+}
+
+.Section-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.Section-text {
+  margin: 1em auto;
+  max-width: 30em;
+}
+
+.Section .Code {
+  margin: auto;
+  max-width: 30em;
+}

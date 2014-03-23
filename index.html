@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>SUIT CSS methodology and tools</title>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="main.css">
+
+<div class="Page">
+
+  <div class="Card">
+
+    <div class="Container">
+
+      <div class="Header u-cf">
+        <h1 class="Header-project u-textCenter">
+          <a href="https://github.com/suitcss/suit">SUIT CSS</a>
+        </h1>
+      </div>
+
+      <div class="CallToAction u-textCenter">
+        <p class="CallToAction-text">CSS for building self-contained, composable, configurable UI components.</p>
+        <div class="CallToAction-cli">
+          <div class="CallToAction-cmd">
+            <a href="https://github.com/component/component">component</a> install suitcss/suit
+          </div>
+          <div class="CallToAction-cmd">
+            <a href="https://www.npmjs.org/">npm</a> install suitcss
+          </div>
+        </div>
+        <div class="CallToAction-footer">
+          <a class="CallToAction-supportingLink" href="https://github.com/suitcss/suit/blob/master/doc/README.md">Documentation</a> &middot;
+          <a class="CallToAction-supportingLink" href="https://github.com/suitcss/suit/releases">Downloads</a> &middot;
+          <a class="CallToAction-supportingLink" href="https://github.com/suitcss">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="Container">
+
+    <div class="Section">
+      <h2 class="Section-title u-textCenter">Modular and simple</h2>
+      <p class="Section-text u-textCenter">
+        The naming convention helps to scope your component's CSS and limit the
+        specificity of your selectors.
+      </p>
+
+      <pre class="Code">/** @define MyComponent */
+
+.MyComponent {}
+.MyComponent.is-animating {}
+.MyComponent--modifier {}
+
+.MyComponent-part {}
+.MyComponent-anotherPart {}</pre>
+
+    </div>
+
+    <div class="Section">
+      <h2 class="Section-title u-textCenter">Easy theming</h2>
+      <p class="Section-text u-textCenter">
+        Define default values for themeable properties. Change their compiled
+        value by redefining them in a theme pack.
+      </p>
+
+      <pre class="Code">/** @define MyComponent */
+
+:root {
+  var-color-MyComponent: green;
+}
+
+.MyComponent {
+  color: var(color-MyComponent);
+}
+
+/* ... */
+
+:root {
+  var-color-MyComponent: blue;
+}</pre>
+
+    </div>
+
+    <div class="Section">
+      <h2 class="Section-title u-textCenter">Supporting Node.js tool chain</h2>
+      <p class="Section-text u-textCenter">
+        Package management with <a href="https://github.com/component/component">Component(1)</a>
+        or <a href="https://www.npmjs.org/">npm</a>, preprocessing with
+        <a href="https://github.com/reworkcss/rework">Rework</a>, vendor prefixes with
+        <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>, conformance testing
+        with <a href="https://github.com/suitcss/rework-suit-conformance">suit-conformance</a>
+        and <a href="https://github.com/philipwalton/html-inspector">html-inspector</a>.
+      </p>
+    </div>
+
+    <div class="Section">
+      <h2 class="Section-title u-textCenter">Used by…</h2>
+      <p class="Section-text u-textCenter">
+        <a href="https://twitter.com/">Twitter</a> and <a href="https://segment.io/">Segment.io</a>
+      </p>
+    </div>
+
+    <div class="Footer">
+      <p class="u-textCenter">
+        <a href="https://twitter.com/necolas" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @necolas</a>
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
