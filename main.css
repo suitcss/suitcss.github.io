@@ -1,6 +1,6 @@
 html {
   background: #fff;
-  color: #333;
+  color: #555;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -11,9 +11,15 @@ html {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   html {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1300px) {
+  html {
+    font-size: 22px;
   }
 }
 
@@ -55,27 +61,25 @@ a:active {
  */
 
 .CallToAction-text {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
   margin: 0;
 }
 
-.CallToAction-cli {
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+.CallToAction-tools {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+.CallToAction-link {
   color: #fff;
   display: inline-block;
-  margin-top: 3rem;
-  padding: 1rem 3rem;
-  font-family: monospace, monospace;
 }
 
-.CallToAction-cmd + .CallToAction-cmd {
+.CallToAction-link + .CallToAction-link {
   margin: 1rem 0 0;
-}
-
-.CallToAction-cmd a {
-  color: #fff;
 }
 
 .CallToAction-footer {
@@ -99,13 +103,12 @@ a:active {
 }
 
 .Card .Header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .Card .CallToAction {
   margin: 0 auto;
   width: 100%;
-  max-width: 38em;
 }
 
 /**
@@ -113,11 +116,20 @@ a:active {
  */
 
 .Code {
-  background: #f8f8f8;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  background: #f0f4f5;
+  border: 1px solid;
+  border-left-width: 10px;
+  border-color: #acc9da;
+  color: #000;
+  direction: ltr;
   font-size: 0.8rem;
-  padding: 40px;
+  margin: 1em 0 2em;
+  padding: 1em;
+  text-align: left;
+}
+
+.Code-comment {
+  color: #999;
 }
 
 /**
@@ -126,7 +138,7 @@ a:active {
 
 .Container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 30rem;
   padding: 0 1rem;
 }
 
@@ -178,17 +190,12 @@ a:active {
 }
 
 .Section-title {
+  color: #333;
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0;
 }
 
 .Section-text {
-  margin: 1em auto;
-  max-width: 30em;
-}
-
-.Section .Code {
-  margin: auto;
-  max-width: 30em;
+  margin: 1.375em auto;
 }

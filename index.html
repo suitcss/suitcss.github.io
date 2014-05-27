@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>SUIT CSS methodology and tools</title>
+<title>SUIT CSS: style tools for UI components</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="normalize.css">
 <link rel="stylesheet" href="main.css">
@@ -18,13 +18,19 @@
       </header>
 
       <div class="CallToAction u-textCenter">
-        <p class="CallToAction-text">CSS for building self-contained, composable, configurable UI components.</p>
-        <div class="CallToAction-cli">
-          <div class="CallToAction-cmd">
-            <a href="https://github.com/component/component">component</a> install suitcss/suit
+        <p class="CallToAction-text">Style tools for UI components</p>
+        <div class="CallToAction-tools">
+          <div>
+            <a class="CallToAction-link" href="https://github.com/suitcss/preprocessor">css preprocessor</a>
+            &middot;
+            <a class="CallToAction-link" href="https://github.com/suitcss/rework-suit-conformance">encapsulation testing</a>
           </div>
-          <div class="CallToAction-cmd">
-            <a href="https://www.npmjs.org/">npm</a> install suitcss
+          <div>
+            <a class="CallToAction-link" href="https://github.com/suitcss/base">style foundation</a>
+            &middot;
+            <a class="CallToAction-link" href="https://github.com/suitcss/utils">style utilities</a>
+            &middot;
+            <a class="CallToAction-link" href="https://github.com/suitcss/components">style components</a>
           </div>
         </div>
         <div class="CallToAction-footer">
@@ -40,59 +46,143 @@
   <div class="Container">
 
     <section class="Section">
-      <h2 class="Section-title u-textCenter">Modular and simple</h2>
-      <p class="Section-text u-textCenter">
-        The naming convention helps to scope your component's CSS and limit the
-        specificity of your selectors.
+      <h2 class="Section-title u-textCenter">Introduction</h2>
+      <p class="Section-text">
+        SUIT CSS is a reliable and testable styling methodology for
+        <b>component-based UI development</b>. A collection of CSS packages and
+        build tools are available as modules. SUIT CSS plays well with React,
+        Ember, Angular, and other component-based approaches to UI development.
       </p>
+    </section>
 
-      <pre class="Code">/** @define MyComponent */
+    <!-- ================================================================== -->
 
-.MyComponent {}
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Scope styles</h2>
+      <p class="Section-text">
+        The SUIT CSS <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">naming convention</a>
+        helps to scope component CSS and make your widgets render more predictably.
+      </p>
+      <pre class="Code">.MyComponent {}
 .MyComponent.is-animating {}
 .MyComponent--modifier {}
 
 .MyComponent-part {}
 .MyComponent-anotherPart {}</pre>
-
     </section>
 
-    <section class="Section">
-      <h2 class="Section-title u-textCenter">Easy theming</h2>
-      <p class="Section-text u-textCenter">
-        Define default values for themeable properties. Change their compiled
-        value by redefining them in a theme pack.
-      </p>
+    <!-- ================================================================== -->
 
-      <pre class="Code">/** @define MyComponent */
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Future-facing CSS preprocessor</h2>
+      <p class="Section-text">
+        The SUIT CSS <a href="https://github.com/suitcss/preprocessor">preprocessor</a> assembles
+        future-facing extensions to CSS that support component-based development.
+      </p>
+      <pre class="Code">npm install suitcss-preprocessor</pre>
+      <p class="Section-text">
+        Vendor-prefixes are automatically applied with <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>.
+        <a href="https://github.com/reworkcss/rework-custom-media/">Custom media query aliases</a>
+        and <a href="https://github.com/reworkcss/rework-vars">custom properties</a> help with
+        theming and configuring components. <a href="https://github.com/conradz/rework-npm">Imports are inlined</a>
+        and can be used to reference npm-installed packages.
+      </p>
+      <pre class="Code"><span class="Code-comment">/* Import inlining */</span>
+@import "normalize.css";
+
+<span class="Code-comment">/* Media query aliases */</span>
+@custom-media --wide-screen (min-width: 80em);
+
+<span class="Code-comment">/* Custom properties */</span>
+:root {
+  --base-font-size: 16px;
+}
+
+@media (--wide-screen) {
+  html {
+    font-size: calc(var(--base-font-size) * 2);
+  }
+}</pre>
+    </section>
+
+    <!-- ================================================================== -->
+
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Encapsulation testing</h2>
+      <p class="Section-text">
+        The <a href="https://github.com/suitcss/rework-suit-conformance">conformance plugin</a>
+        (for <a href="https://github.com/reworkcss/rework">Rework</a>) is
+        included in the preprocessor but can be used stand-alone. It lets you test your
+        CSS for conformance to the SUIT CSS methodology.
+      </p>
+      <pre class="Code"><span class="Code-comment">/** @define MyComponent; use strict */</span>
 
 :root {
-  var-color-MyComponent: green;
+  --color-MyComponent: green;
 }
 
 .MyComponent {
-  color: var(color-MyComponent);
-}
-
-/* ... */
-
-:root {
-  var-color-MyComponent: blue;
+  color: var(--color-MyComponent);
 }</pre>
-
-    </section>
-
-    <section class="Section">
-      <h2 class="Section-title u-textCenter">Supporting Node.js tool chain</h2>
-      <p class="Section-text u-textCenter">
-        Package management with <a href="https://github.com/component/component">Component(1)</a>
-        or <a href="https://www.npmjs.org/">npm</a>, preprocessing with
-        <a href="https://github.com/reworkcss/rework">Rework</a>, vendor prefixes with
-        <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>, conformance testing
-        with <a href="https://github.com/suitcss/rework-suit-conformance">suit-conformance</a>
-        and <a href="https://github.com/philipwalton/html-inspector">html-inspector</a>.
+      <p class="Section-text">
+        <a href="https://github.com/philipwalton/html-inspector">HTML Inspector</a>
+        can be used to test that your HTML conforms to the SUIT conventions.
       </p>
     </section>
+
+    <!-- ================================================================== -->
+
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Starter CSS for web apps</h2>
+      <p class="Section-text">
+        SUIT CSS provides a normalizing
+        <a href="https://github.com/suitcss/base">style foundation</a> designed
+        for web applications. The
+        <a href="https://github.com/suitcss/utils">utilities</a> provide
+        design-agnostic structural helpers that reduce common boilerplate CSS
+        in components.
+      </p>
+      <pre class="Code">&lt;div class="MyComponent">
+  &lt;h1 class="u-textTruncate">...&lt;/h1>
+  &lt;div class="u-cf">
+    &lt;div class="u-sizeFit">...&lt;/div>
+    &lt;div class="u-sizeFill">...&lt;/div>
+  &lt;/div>
+&lt;/div></pre>
+    </section>
+
+    <!-- ================================================================== -->
+
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Dependency resolution</h2>
+      <p class="Section-text">
+        SUIT CSS works best when style dependencies are automatically resolved.
+        Rely on <a href="https://www.npmjs.org/">npm</a> or
+        <a href="https://github.com/component/component">Component(1)</a>. With
+        npm, imports can be used to depend on local components <em>and</em> CSS
+        in npm-installed packages.
+      </p>
+      <pre class="Code"><span class="Code-comment">/* npm-installed dependency */</span>
+@import "suitcss-utils-text";
+<span class="Code-comment">/* local dependency */</span>
+@import "./Button";
+
+.MyComponent {}</pre>
+    </section>
+
+    <!-- ================================================================== -->
+
+    <section class="Section">
+      <h2 class="Section-title u-textCenter">Modular and extensible</h2>
+      <p class="Section-text">
+        Each part of the <a href="https://github.com/suitcss">SUIT CSS</a>
+        project is modular. Pick and choose which CSS packages to use. Write
+        your own components. Rebuild and extend the CSS preprocessor using
+        <a href="https://github.com/reworkcss/rework">Rework</a> plugins.
+      </p>
+    </section>
+
+    <!-- ================================================================== -->
 
     <section class="Section">
       <h2 class="Section-title u-textCenter">Used by…</h2>
