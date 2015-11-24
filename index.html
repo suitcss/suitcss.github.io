@@ -23,7 +23,7 @@
           <div>
             <a class="CallToAction-link" href="https://github.com/suitcss/preprocessor">css preprocessor</a>
             &middot;
-            <a class="CallToAction-link" href="https://github.com/suitcss/rework-suit-conformance">encapsulation testing</a>
+            <a class="CallToAction-link" href="https://github.com/postcss/postcss-bem-linter">encapsulation testing</a>
           </div>
           <div>
             <a class="CallToAction-link" href="https://github.com/suitcss/base">style foundation</a>
@@ -82,9 +82,9 @@
       <pre class="Code">npm install suitcss-preprocessor</pre>
       <p class="Section-text">
         Vendor-prefixes are automatically applied with <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>.
-        <a href="https://github.com/reworkcss/rework-custom-media/">Custom media query aliases</a>
-        and <a href="https://github.com/reworkcss/rework-vars">custom properties</a> help with
-        theming and configuring components. <a href="https://github.com/conradz/rework-npm">Imports are inlined</a>
+        <a href="https://github.com/postcss/postcss-custom-media">Custom media query aliases</a>
+        and <a href="https://github.com/postcss/postcss-custom-properties">custom properties</a> help with
+        theming and configuring components. <a href="https://github.com/postcss/postcss-import">Imports are inlined</a>
         and can be used to reference npm-installed packages.
       </p>
       <pre class="Code"><span class="Code-comment">/* Import inlining */</span>
@@ -110,12 +110,12 @@
     <section class="Section">
       <h2 class="Section-title u-textCenter">Encapsulation testing</h2>
       <p class="Section-text">
-        The <a href="https://github.com/suitcss/rework-suit-conformance">conformance plugin</a>
-        (for <a href="https://github.com/reworkcss/rework">Rework</a>) is
+        <a href="https://github.com/postcss/postcss-bem-linter">postcss-bem-linter</a>
+        (for <a href="https://github.com/postcss/postcss">PostCSS</a>) is
         included in the preprocessor but can be used stand-alone. It lets you test your
         CSS for conformance to the SUIT CSS methodology.
       </p>
-      <pre class="Code"><span class="Code-comment">/** @define MyComponent; use strict */</span>
+      <pre class="Code"><span class="Code-comment">/** @define MyComponent; */</span>
 
 :root {
   --MyComponent-color: green;
@@ -178,7 +178,7 @@
         Each part of the <a href="https://github.com/suitcss">SUIT CSS</a>
         project is modular. Pick and choose which CSS packages to use. Write
         your own components. Rebuild and extend the CSS preprocessor using
-        <a href="https://github.com/reworkcss/rework">Rework</a> plugins.
+        <a href="https://github.com/postcss/postcss">PostCSS</a> plugins.
       </p>
     </section>
 
